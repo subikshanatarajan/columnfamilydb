@@ -1,0 +1,105 @@
+creating namespace
+CREATE KEYSPACE studdetails WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 2};
+
+use studdetails;
+
+#creating Table
+
+cqlsh:institution> CREATE TABLE students (
+               ...    regno text PRIMARY KEY,
+               ...    name text,
+               ...    place text,
+               ...    phone text,
+               ...    department text
+               ... );
+
+#inserting values
+
+cqlsh:studdetails> INSERT INTO students (regno, name,place,phone, department) VALUES ('20itro108', 'subiksha', 'erode', '701091245','IT');
+
+cqlsh:studdetails> INSERT INTO 
+students (regno, name,place,phone, department) VALUES ('20itro91', 'sandhiya', 'gobi', '9435833445','IT');
+
+cqlsh:studdetails> INSERT INTO 
+students (regno, name,place,phone, department) VALUES ('20itro102', 'srinidhi', 'pallipalayam', '9325335211','IT');
+
+cqlsh:studdetails> INSERT INTO 
+students (regno, name,place,phone, department) VALUES ('20itro119', 'vaishali', 'perundurai', '8541123214','IT');
+
+cqlsh:studdetails> INSERT INTO 
+students (regno, name,place,phone, department) VALUES ('20itro109', 'ramya', 'erode', '9551116521','IT');
+
+cqlsh:studdetails> INSERT INTO 
+students (regno, name,place,phone, department) VALUES ('20itro121', 'varsha', 'erode', '874511521','IT');
+
+cqlsh:studdetails> INSERT INTO 
+students (regno, name,place,phone, department) VALUES ('20itr080', 'pradeepa', 'perundurai', '8742485612','IT');
+
+cqlsh:studdetails> INSERT INTO 
+students (regno, name,place,phone, department) VALUES ('20itro073', 'naveena', 'gobi', '8722224512','IT');
+
+cqlsh:studdetails> INSERT INTO 
+students (regno, name,place,phone, department) VALUES ('20itro047', 'keerthana', 'erode', '7418523963','IT'); 
+
+#displaying values
+
+ regno    | name   | place | phone               | department    
+----------+---------+------------+---------------------+-------------+-------------+------
+ 20itr108 | subiksha | erode | 7010912450 | it 
+ 20itr091 | sandhiya | gobi | 9435833445 | it 
+20itr102 | srinidhi | pallipalayam | 9325335211 | it 
+20itr121 | vaishali | perundurai | 8541123214  | it 
+20itr109 | ramya | erode | 9551116521 | it 
+20itr121 | varsha | erode | 874511521 | it 
+20itr080 | pradeepa | erode | 8742485612 | it 
+20itr073 | naveena | gobi | 8722224512 | it 
+20itr047 | keerthana | erode | 7418523963 | it 
+
+
+#creating Table
+
+cqlsh:studdetails> CREATE TABLE extradetails (
+               ...    regno text PRIMARY KEY,
+               ...    name text,
+               ...    type text,
+               ...    department text
+               ... );
+
+#inserting values
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itro25', 'subiksha', 'day-scholar', 'IT');
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itr091', 'sandhiya', 'hostel', 'IT');
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itr102', 'srinidhi', 'hostel', 'IT');
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itr119', 'vaihsali', 'hostel', 'IT');
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itr109', 'ramya', 'day-scholar', 'IT');
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itr121', 'varsha', 'day-scholar', 'IT');
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itr080', 'pradeepa', 'day-scholar', 'IT');
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itr073', 'naveena', 'hostel', 'IT');
+
+cqlsh: studdetails> INSERT INTO extradetails(regno, name,type, department) VALUES ('20itr047', 'keerthana', 'day-scholar', 'IT');
+
+#displaying table
+
+
+cqlsh: studdetails> select * from extradetails;
+
+ regno    |    name   | place       | type
+----------+------------+-------------+--------------+-------------
+ 20itr108 |   subiksha  |   erode  |    dayscholar
+ 20itr091 |   sandhiya  |   gobi  |   hostel
+  20itr102 |   srinidhi  |   pallipalayam  |    hostel
+ 20itr119 |  vaishali  |   perundurai  |    dayscholar
+ 20itr109 |   ramya  |   erode  |    dayscholar
+ 20itr121 |   varsha  |   erode  |    dayscholar
+20itr108 |   pradeepa  |  erode   |    dayscholar
+ 20itr073 |   naveena  |   gobi  |   hostel
+  20itr047 |   keerthana  |   erode  |    dayscholar
+
+(9 rows)
